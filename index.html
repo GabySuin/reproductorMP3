@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      nombre="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Reproductor </title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="">Reproductoooor </a>
+        <div class="right-nav">
+          <div class="input-icon">
+            <input
+              type="text"
+              id="search"
+              placeholder="Search a Canciones..." />
+            <i class="bi bi-search" id="searchIcon"></i>
+          </div>
+          <a href="./pages/login.html"
+            ><i class="bi bi-person-circle"></i
+          ></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="Canciones-container" id="Canciones-container"></div>
+
+      <div class="list-container">
+
+     
+        <!-- 
+
+All Cancioness
+
+ -->
+
+        <div class="list">
+          <div class="Canciones-list">
+            <h3>Canciones</h3>
+            
+            <div class="Cancioness" id="Cancioness">
+
+             
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- 
+
+  Favorites
+
+ -->
+
+        <div class="list">
+          <div class="Canciones-list">
+            <h3>Favorites</h3>
+            <div class="Cancioness" id="favorites"></div>
+          </div>
+        </div>
+
+        <!-- 
+
+        playlist
+
+       -->
+
+        <div class="list">
+          <div class="Canciones-list">
+            <h3>playlist</h3>
+            <div class="Cancioness" id="playlist"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
