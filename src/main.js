@@ -348,7 +348,77 @@ const allCancioness = [
   }),
 
 
+  new Canciones({
+    nombre: 'Muriendo de amor',
+    duracion: '03:44',
+    album: 'Corazon serrano',
+    genero: 'Cumbia',
+    año: '2011',
+    image: 'assets/imagenes/muriendo de amor corazón serranojpg',
+    musica: 'assets/music/Muriendo de amor - Corazon serrano (videoclip HD).mp3'
+  }),
 
+
+
+  new Canciones({
+    nombre: 'Muriendo de amor',
+    duracion: '03:44',
+    album: 'Corazon serrano',
+    genero: 'Cumbia',
+    año: '2011',
+    image: 'assets/imagenes/muriendo de amor corazón serranojpg',
+    musica: 'assets/music/Muriendo de amor - Corazon serrano (videoclip HD).mp3'
+  }),
+
+
+
+  new Canciones({
+    nombre: 'Muriendo de amor',
+    duracion: '03:44',
+    album: 'Corazon serrano',
+    genero: 'Cumbia',
+    año: '2011',
+    image: 'assets/imagenes/muriendo de amor corazón serranojpg',
+    musica: 'assets/music/Muriendo de amor - Corazon serrano (videoclip HD).mp3'
+  }),
+
+
+
+  new Canciones({
+    nombre: 'Muriendo de amor',
+    duracion: '03:44',
+    album: 'Corazon serrano',
+    genero: 'Cumbia',
+    año: '2011',
+    image: 'assets/imagenes/muriendo de amor corazón serranojpg',
+    musica: 'assets/music/Muriendo de amor - Corazon serrano (videoclip HD).mp3'
+  }),
+
+
+
+  new Canciones({
+    nombre: 'Muriendo de amor',
+    duracion: '03:44',
+    album: 'Corazon serrano',
+    genero: 'Cumbia',
+    año: '2011',
+    image: 'assets/imagenes/muriendo de amor corazón serranojpg',
+    musica: 'assets/music/Muriendo de amor - Corazon serrano (videoclip HD).mp3'
+  }),
+
+
+
+  new Canciones({
+    nombre: 'Muriendo de amor',
+    duracion: '03:44',
+    album: 'Corazon serrano',
+    genero: 'Cumbia',
+    año: '2011',
+    image: 'assets/imagenes/muriendo de amor corazón serranojpg',
+    musica: 'assets/music/Muriendo de amor - Corazon serrano (videoclip HD).mp3'
+  }),
+
+  
 
 
 
@@ -402,14 +472,14 @@ function changeCurrentCanciones(id) {
   const Canciones = allCancioness.find(p => p.id === id);
   currentCanciones = Canciones;
   CancionesContainer.innerHTML = `
-      <img class="Canciones-img" src="${Canciones.image}" alt="shoe" />
-      <h4 class="Canciones-nombre">
+      <img class="Canciones-img" src="${Canciones.image}" alt="" />
+      <h5 class="Canciones-nombre">
           <span> Nombre : </span>${Canciones.nombre}
           
           <span> Artista : </span>${Canciones.album}
           <span> Genero : </span>${Canciones.genero}
           <span> Año : </span>${Canciones.año}
-      </h4>
+      </h5>
       <div class="Canciones-price">
           <audio id="audioPlayer" controls>
               <source src="${Canciones.musica}" type="audio/mp3">
@@ -442,7 +512,7 @@ function changeCurrentCanciones(id) {
       changeCurrentCanciones(allCancioness[nextIndex].id);
       audioPlayer.play();
   });
-  audioPlayer.play();
+  
 }
 
 changeCurrentCanciones(0)
