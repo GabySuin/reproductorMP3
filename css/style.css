@@ -255,3 +255,18 @@ img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+
+
+.button-adelantar {
+  background-color: #dae6da; /* Color de fondo */
+  border: none; /* Sin borde */
+  color: rgb(10, 10, 10); /* Color de texto */
+  padding: 10px 20px; /* Espaciado interno */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Sin decoración de texto */
+  display: inline-block; /* Mostrar como bloque en línea */
+  font-size: 16px; /* Tamaño de fuente */
+  margin: 4px 2px; /* Margen externo */
+  cursor: pointer; /* Cursor al pasar por encima */
+  border-radius: 8px; /* Radio de borde */
+}

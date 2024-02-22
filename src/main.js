@@ -79,6 +79,17 @@ class CancionesList {
 /* lista para crear canciones falta nombre ahi estatodo */
 
 const allCancioness = [
+
+
+  new Canciones({
+    nombre: 'Se alejo de mi',
+    duracion: '04:46',
+    album: 'Paolo Plaza',
+    genero: 'Salsa',
+    año: '2012',
+    image: 'assets/imagenes/se alejop de mi.jpg',
+    musica: 'assets/music/se alejo de mi   paolo plaza (letra).mp3'
+  }),
   new Canciones({
     nombre: 'Adicto ',
     duracion: '5:03',
@@ -99,15 +110,7 @@ const allCancioness = [
     musica: 'assets/music/Erick Franchesky   Fantasia Herida.mp3'
  
     }), 
-  new Canciones({
-    nombre: 'Se alejo de mi',
-    duracion: '04:46',
-    album: 'Paolo Plaza',
-    genero: 'Salsa',
-    año: '2012',
-    image: 'assets/imagenes/se alejop de mi.jpg',
-    musica: 'assets/music/se alejo de mi   paolo plaza (letra).mp3'
-  }),
+  
   new Canciones({
     nombre: 'Arrepentida',
     duracion: '04:26',
@@ -469,23 +472,34 @@ function removeCurrentCancionesFromFavorite() {
 }
 
 function changeCurrentCanciones(id) {
-  const Canciones = allCancioness.find(p => p.id === id);
+
+  const index = allCancioness.findIndex(p => p.id === id);
+  const prevIndex = (index - 1 + allCancioness.length) % allCancioness.length;
+  
+  const nextIndex = (index + 1) % allCancioness.length;
+ 
+  const Canciones = allCancioness[index];
   currentCanciones = Canciones;
   CancionesContainer.innerHTML = `
       <img class="Canciones-img" src="${Canciones.image}" alt="" />
       <h5 class="Canciones-nombre">
-          <span> Nombre : </span>${Canciones.nombre}
+          <span> Nombre : </span>${Canciones.nombre} <br>
           
-          <span> Artista : </span>${Canciones.album}
-          <span> Genero : </span>${Canciones.genero}
+          <span> Artista : </span>${Canciones.album}<br>
+          <span> Genero : </span>${Canciones.genero}<br>
           <span> Año : </span>${Canciones.año}
       </h5>
       <div class="Canciones-price">
-          <audio id="audioPlayer" controls>
+          <audio id="Player" controls>
               <source src="${Canciones.musica}" type="audio/mp3">
               Your browser does not support the audio element.
           </audio>
-      </div>
+          <button  id="prevButton" class="button-adelantar"> << </button>
+         
+          <button  id="nextButton"  class="button-adelantar"> >> </button>
+          </div>
+
+     
 
       ${Canciones.isFavorite ?
           `<button class="add-to-playlist-btn secondary-btn" onClick="removeCurrentCancionesFromFavorite()">
@@ -506,17 +520,21 @@ function changeCurrentCanciones(id) {
           </button>`}
   `;
 
-  const audioPlayer = document.getElementById('audioPlayer');
-  audioPlayer.addEventListener('ended', () => {
-      const nextIndex = (allCancioness.findIndex(p => p.id === id) + 1) % allCancioness.length;
-      changeCurrentCanciones(allCancioness[nextIndex].id);
-      audioPlayer.play();
+
+  const prevButton = document.getElementById('prevButton');
+  prevButton.addEventListener('click', () => {
+      changeCurrentCanciones(allCancioness[prevIndex].id);
   });
+
+  const nextButton = document.getElementById('nextButton');
+  nextButton.addEventListener('click', () => {
+      changeCurrentCanciones(allCancioness[nextIndex].id);
+  });
+ 
   
 }
 
 changeCurrentCanciones(0)
-
 
 
 const playlistContainerList = document.getElementById('playlist')
@@ -545,3 +563,6 @@ searchInput.addEventListener('keypress', (event) => {
     Cancioness.searchCanciones(searchInput.value)
   }
 })
+
+
+ 
